@@ -35,6 +35,9 @@ git push -u origin master
 
 ####That's all! You just set up a GitHub repository.
 
+##Make demo.py works
+You need to install [biopython](http://biopython.org/wiki/Download)
+
 ![ARTbio Logo][ARTbio]
 
 [ARTbio]: https://mississippi.snv.jussieu.fr/artbio/wp-content/uploads/2015/07/ARTbio_logo_wo_IBPS_small.png 
