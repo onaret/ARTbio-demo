@@ -1,6 +1,7 @@
 """
 Discovering biopython, using code from http://biopython.org/wiki/SeqIO
 """
+
 import argparse
 from Bio import SeqIO
 
@@ -13,11 +14,12 @@ input_handle = open(param.input, "rU")
 output_handle = open(param.output, "w")
 
 count=0
+output_handle.write("Name\tLength\n")
 for record in SeqIO.parse(input_handle, "fasta") :
-    count += SeqIO.write(record, output_handle, "fasta")
-    output_handle.write("\t")
+    output_handle.write(record.id + "\t" + str(len(record.seq)) + "\n")
+    count+=1
 
-output_handle.write('There is ' + str(count) + " sequences in file " + str(param.input))
+output_handle.write('\nThere is ' + str(count) + " sequences in file " + str(param.input))
 
 input_handle.close()
 output_handle.close()
